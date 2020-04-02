@@ -40,7 +40,7 @@
         <nav>
             <ul class="header__menu">
 
-                <li class="header__menu-drop"><a href="#"><span>Услуги</span></a>
+                <li class="header__menu-drop"><a href="#services"><span>Услуги</span></a>
                     <ul class="header__menu-sub">
                         <li><a href="#">Вакансии</a></li>
                         <li><a href="#">Тарифы</a></li>
@@ -50,7 +50,7 @@
                     </ul>
                 </li>
 
-                <li class="header__menu-drop"><a href="#"><span>Тарифы</span></a>
+                <li class="header__menu-drop"><a href="#tariffs"><span>Тарифы</span></a>
                     <ul class="header__menu-sub">
                         <li><a href="#">Перевозка грузов</a></li>
                         <li><a href="#">Паллетная доставка</a></li>
@@ -63,7 +63,7 @@
                     </ul>
                 </li>
 
-                <li class="header__menu-drop"><a href="#"><span>Акции</span></a>
+                <li class="header__menu-drop"><a href="#news"><span>Акции</span></a>
                     <ul class="header__menu-sub">
                         <li class="first"><a href="#">Упаковка</a></li>
                         <li><a href="#">Хранение грузов</a></li>
@@ -74,9 +74,9 @@
                     </ul>
                 </li>
 
-                <li><a href="#">Документы</a></li>
-                <li><a href="#">Способы оплаты</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#document">Документы</a></li>
+                <li><a href="#payment">Способы оплаты</a></li>
+                <li><a href="#footer">Контакты</a></li>
             </ul>
         </nav>
     </div>
@@ -202,7 +202,7 @@
 
 
     <div class="wrapper">
-        <section class="services">
+        <section id="services" class="services">
             <div class="container">
                 <h2>Услуги</h2>
                 <div class="flex-box">
@@ -230,7 +230,7 @@
             </div>
         </section>
 
-        <section class="tariffs">
+        <section id="tariffs" class="tariffs">
             <div class="container">
                 <h2>Тарифы</h2>
 
@@ -703,15 +703,15 @@
 
                 </div>
 
-<!--                <div class="tariffs__links">
+                <div class="tariffs__links">
                     <a href="">Запросить индивидуальное предложение</a>
                     <a href="">Скачать полный прайс-лист по сборным грузам</a>
-                </div>-->
+                </div>
             </div>
 
         </section>
 
-        <section class="news">
+        <section id="news" class="news">
             <div class="container">
                 <h2>Новости</h2>
                 <div id="news-slider">
@@ -720,7 +720,7 @@
                         <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news-1.jpg">
+                                <img src="assets/img/news-1.gif">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
@@ -739,7 +739,7 @@
                         <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news-1.jpg">
+                                <img src="assets/img/news-2.jpg">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
@@ -754,6 +754,47 @@
                             </div>
                         </div>
                     </article>
+
+                    <article>
+                        <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
+                        <div class="news__item">
+                            <figure class="news__figure">
+                                <img src="assets/img/news-3.png">
+                            </figure>
+                            <div class="news__inner">
+                                <div class="news__content">
+                                    <span class="news__date">07.03.2020 г.</span>
+                                    <span class="news__description">
+                                      <p>Скидка -10% на услугу: Перевозка в/из Минск. <br><br>10 городов России.</p>
+                                    </span>
+                                    <a class="btn news__btn" href="#">
+                                        <span>Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article>
+                        <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
+                        <div class="news__item">
+                            <figure class="news__figure">
+                                <img src="assets/img/news-4.jpg">
+                            </figure>
+                            <div class="news__inner">
+                                <div class="news__content">
+                                    <span class="news__date">07.03.2020 г.</span>
+                                    <span class="news__description">
+                                      <p>Скидка -10% на услугу: Перевозка в/из Минск. <br><br>10 городов России.</p>
+                                    </span>
+                                    <a class="btn news__btn" href="#">
+                                        <span>Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
                 <!--
                                     <span class="news__slider news__slider_left"></span>
@@ -763,7 +804,7 @@
 
         </section>
 
-        <section class="document">
+        <section id="document" class="document">
             <div class="container">
                 <h2>документы</h2>
                 <div class="flex-box">
@@ -801,7 +842,7 @@
             </div>
         </section>
 
-        <section class="shipping">
+        <section id="shipping" class="shipping">
             <div class="container">
                 <h2>процесс отправки</h2>
                 <div class="shipping__inner">
@@ -818,7 +859,7 @@
             </div>
         </section>
 
-        <section class="payment">
+        <section id="payment" class="payment">
             <div class="container">
                 <h2>Способы оплаты</h2>
                 <div class="flex-box">
@@ -858,7 +899,7 @@
 
 
 
-<footer class="footer">
+<footer id="footer" class="footer">
     <div class="footer__inner">
         <div class="container">
             <form class="footer-form form">

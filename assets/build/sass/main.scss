@@ -58,6 +58,7 @@ html, body {
   @include font($familyReg);
   color: #383838;
   background-color: #fff;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -246,7 +247,9 @@ h2 {
   width: 100%;
   display: none;
   padding-left: 12px;
+  font-size: 0.875em;
   color: #fff;
+  text-transform: uppercase;
   background: $backgroundRed;
   z-index: 4;
   & > li {
@@ -688,16 +691,31 @@ input::-webkit-inner-spin-button {
   background: $backgroundRed;
 }
 
-/*
 
 .tariffs__links {
   display: flex;
   flex-direction: row;
+  padding-bottom: 15px;
   font-size: 0.875em;
   color: #A91F23;
+  a {
+    position: relative;
+    padding-right: 45px;
+    &::before {
+      content: '';
+      background-image: url("../img/row-right.svg");
+      width: 13px;
+      height: 8px;
+      position: absolute;
+      right: 25px;
+      top: 5px;
+      transition: .4s;
+    }
+    &:hover::before {
+      right: 18px;
+    }
+  }
 }
-*/
-
 
 
 .news {
@@ -1218,7 +1236,7 @@ input::-webkit-inner-spin-button {
 
       a {
         position: relative;
-        font-size: 15px;
+        font-size: 0.825em;
         color: #fff;
       }
 

@@ -293,6 +293,14 @@ h2 {
       margin-bottom: 0;
     }
   }
+  .module__info {
+    opacity: 0;
+    transition: opacity 1s;
+
+    &.showing {
+      opacity: 1;
+    }
+  }
 }
 
 .module__slider-control {
@@ -1362,6 +1370,15 @@ input::-webkit-inner-spin-button {
       &.showing {
         opacity: 1;
       }
+
+      .module__info {
+        opacity: 0;
+        transition: opacity 1s;
+        &.showing {
+          opacity: 1;
+        }
+      }
+
       img {
         width: 100%;
       }

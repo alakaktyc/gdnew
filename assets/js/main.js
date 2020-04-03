@@ -389,13 +389,16 @@ function handleGesture() {
 }
 
 const slides = document.querySelectorAll('.module__slide');
+const slidesText = document.querySelectorAll('.module__info');
 let currentSlide = 0;
 const slideInterval = setInterval(startSlide,4000);
 
 function startSlide() {
     slides[currentSlide].className = 'module__slide';
+    slidesText[currentSlide].className = 'module__info';
     currentSlide = (currentSlide+1)%slides.length;
     slides[currentSlide].className = 'module__slide showing';
+    slidesText[currentSlide].className = 'module__info showing';
 }
 
 document.querySelector('.module__slider-row--Left').addEventListener('click', function () {

@@ -18,59 +18,65 @@
 
 <header class="header">
     <div class="container">
+        <button class="header__menu-mob" tabindex="1"><img src="assets/img/btn_mob-menu.svg" alt=""/></button>
 
-
-        <div class="flex-box">
-
-            <div class="header__logo"><a href="#"></a></div>
-            <button class="header__menu-mob" tabindex="1"><img src="assets/img/btn_mob-menu.svg" alt=""/></button>
-            <div class="header__cities">
-                <p>Минск</p>
-                <a href="#">другой город</a>
+        <div class="header__inner">
+            <div class="header__content">
+                <div class="header__logo header__logo--color"><a href="#"><img src="assets/img/logo_color.svg" alt="Главдоставка"></a></div>
+                <div class="header__logo header__logo--white"><a href="#"><img src="assets/img/logo.svg" alt="Главдоставка"></a></div>
+                <div class="header__cities">
+                    <p>Минск</p>
+                    <a href="#">другой город</a>
+                </div>
             </div>
-
 
             <div class="header__about">
                 <p>Пн-Пт с 08.30-18.00</p>
-                <p>+375 (17)<span>336-24-24</span></p>
+                <div class="header__contacts">
+                    <p>+375 (17)<span>336-24-24</span></p>
+                    <a href="">Заказать звонок</a>
+                </div>
             </div>
-
         </div>
+
+
+
+
 
         <nav>
             <ul class="header__menu">
 
                 <li class="header__menu-drop"><a href="#services"><span>Услуги</span></a>
                     <ul class="header__menu-sub">
-                        <li><a href="#">Вакансии</a></li>
+                       <!-- <li><a href="#">Вакансии</a></li>
                         <li><a href="#">Тарифы</a></li>
                         <li><a href="#">Вопрос и ответ</a></li>
                         <li><a href="#">Франшиза</a></li>
-                        <li><a href="#">Виды транспорта</a></li>
+                        <li><a href="#">Виды транспорта</a></li>-->
                     </ul>
                 </li>
 
                 <li class="header__menu-drop"><a href="#tariffs"><span>Тарифы</span></a>
                     <ul class="header__menu-sub">
-                        <li><a href="#">Перевозка грузов</a></li>
+                       <!-- <li><a href="#">Перевозка грузов</a></li>
                         <li><a href="#">Паллетная доставка</a></li>
                         <li><a href="#">Полные машины</a></li>
                         <li><a href="#">Забор и доставка грузов</a></li>
                         <li><a href="#">По городу и области</a></li>
                         <li><a href="#">Авиаперевозка</a></li>
                         <li><a href="#">Южный экспресс</a></li>
-                        <li><a href="#">Северный экспресс</a></li>
+                        <li><a href="#">Северный экспресс</a></li>-->
                     </ul>
                 </li>
 
                 <li class="header__menu-drop"><a href="#news"><span>Акции</span></a>
                     <ul class="header__menu-sub">
-                        <li class="first"><a href="#">Упаковка</a></li>
+                        <!--<li class="first"><a href="#">Упаковка</a></li>
                         <li><a href="#">Хранение грузов</a></li>
                         <li><a href="#">Возврат документов</a></li>
                         <li><a href="#">Страхование</a></li>
                         <li><a href="#">Погрузо-разгрузочные работы</a></li>
-                        <li><a href="#">Сверхнормативное хранение</a></li>
+                        <li><a href="#">Сверхнормативное хранение</a></li>-->
                     </ul>
                 </li>
 
@@ -93,8 +99,8 @@
                     <span class="module__slider-row--right"><i class="right"></i></span>
                 </div>
                 <div class="module__info showing">
-                    <h3><span>Доставка грузов!</span></h3>
-                    <p>Широкая география – более 105 филиалов <br> в 5 странах мира</p>
+                    <h3><span>Без предоплат</span></h3>
+                    <p>Для физических и юридических лиц</p>
                 </div>
                 <div class="module__info">
                     <h3><span>Доставка</span></h3>
@@ -112,7 +118,7 @@
 
             <div class="module__item module__item--right">
                 <form class="calculate" action="">
-                    <h2>Рассчитать перевозку</h2>
+                    <h2 class="title-section">Рассчитать перевозку</h2>
                     <div class="module__cities">
 
                         <label for="cityFrom">Город отправления</label>
@@ -126,17 +132,15 @@
                     </div>
 
                     <div class="module__content">
-                        <p class="module__data">
-                            <img width="14" src="assets/img/icon_weight.svg" alt=""/>
 
-                            <input class="module__input" type="text" name="weight"
-                                   placeholder="Вес груза"><span>кг</span>
+                        <label class="module__data module__data--weight">
+                            Вес
+                            <input class="module__input module__input--weight" type="text" name="weight"
+                                   placeholder="0.2"><span>кг</span>
 
-                        </p>
+                        </label>
 
                         <div class="module__tabs">
-
-                            <img width="20" src="assets/img/icon_volume.svg" alt="Габариты"/>
 
                             <label class="module__tab-item">
 
@@ -171,6 +175,7 @@
 
                             </label>
                         </div>
+
                     </div>
 
                     <div class="flex-box flex-box_module">
@@ -217,7 +222,7 @@
     <div class="wrapper">
         <section id="services" class="services">
             <div class="container">
-                <h2>Услуги</h2>
+                <h2 class="title-section">Услуги</h2>
                 <div class="flex-box">
                     <div class="services__item">
                         <a href="#" class="services__link services__link--group"></a>
@@ -245,7 +250,7 @@
 
         <section id="tariffs" class="tariffs">
             <div class="container">
-                <h2>Тарифы</h2>
+                <h2 class="title-section">Тарифы</h2>
 
                 <div class="tariffs__parameters">
 
@@ -371,7 +376,7 @@
 
                         </div>
                     </div>
-
+                    <button class="btn__row-reverse"><img src="assets/img/row-reverse.svg" alt=""/></button>
                     <div class="tariffs__label">
                         <span class="tariffs__control"><span
                                 class="tariffs__select tariffs__destination">Минск</span> <i
@@ -568,7 +573,7 @@
                             <td>1499</td>
                         </tr>
                         <tr>
-                            <td class="tariffs__table-head">цена</td>
+                            <td class="tariffs__table-head">цена (byn)</td>
                             <td class="tariffs__price"></td>
                             <td class="tariffs__price"></td>
                             <td class="tariffs__price"></td>
@@ -726,10 +731,10 @@
 
         <section id="news" class="news">
             <div class="container">
-                <h2>Новости</h2>
+                <h2 class="title-section title-section--group">Новости <a>Все новости</a></h2>
                 <div id="news-slider">
 
-                    <article>
+                    <article class="news__article">
                         <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
@@ -748,7 +753,7 @@
                             </div>
                         </div>
                     </article>
-                    <article>
+                    <article class="news__article">
                         <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
@@ -768,7 +773,7 @@
                         </div>
                     </article>
 
-                    <article>
+                    <article class="news__article">
                         <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
@@ -788,7 +793,7 @@
                         </div>
                     </article>
 
-                    <article>
+                    <article class="news__article">
                         <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
@@ -819,7 +824,7 @@
 
         <section id="document" class="document">
             <div class="container">
-                <h2>документы</h2>
+                <h2 class="title-section">документы</h2>
                 <div class="flex-box">
 
                     <div class="document__item">
@@ -857,7 +862,7 @@
 
         <section id="shipping" class="shipping">
             <div class="container">
-                <h2>процесс отправки</h2>
+                <h2 class="title-section">процесс отправки</h2>
                 <div class="shipping__inner">
                     <div class="shipping__item"><span class="shipping__text">обращение</span></div>
                     <div class="shipping__item"><span class="shipping__text">заявка</span></div>
@@ -874,7 +879,7 @@
 
         <section id="payment" class="payment">
             <div class="container">
-                <h2>Способы оплаты</h2>
+                <h2 class="title-section">Способы оплаты</h2>
                 <div class="flex-box">
                     <div class="payment__item">
                         <div class="payment__content">

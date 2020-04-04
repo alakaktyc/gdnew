@@ -1,5 +1,5 @@
 //Preloader
-let preloaderEl = document.querySelector('.preloader');
+const preloaderEl = document.querySelector('.preloader');
 function startPreloader() {
     preloaderEl.classList.remove('hid');
     preloaderEl.classList.add('vis');
@@ -407,4 +407,25 @@ document.querySelector('.module__slider-row--Left').addEventListener('click', fu
 
 document.querySelector('.module__slider-row--right').addEventListener('click', function () {
     startSlide(currentSlide + 1);
+});
+
+
+function replaceToNum() {
+    this.value = this.value.replace(/\D/g,'')
+}
+
+const weightInput = document.querySelector('input[name="weight"]');
+const volumeInputs = document.querySelectorAll('.module__data--switching input');
+for (let i = 0; i < volumeInputs.length; ++i){
+    volumeInputs[i].addEventListener('input', replaceToNum)
+}
+weightInput.addEventListener('input', replaceToNum);
+
+
+const btnReverse = document.querySelector('.btn__row-reverse');
+btnReverse.addEventListener('click', function (event) {
+    event.preventDefault();
+    let tempCity = selectDep.textContent;
+    selectDep.textContent = selectDes.textContent;
+    selectDes.textContent = tempCity;
 });

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<header class="header">
+<header id="header" class="header">
     <div class="container">
         <button class="header__menu-mob" tabindex="1"><img src="assets/img/btn_mob-menu.svg" alt=""/></button>
 
@@ -109,16 +109,16 @@
                     <p>Для физических и юридических лиц</p>
                 </div>
                 <div class="module__info">
-                    <h3><span>Доставка</span></h3>
-                    <p>Широкая география – более 105 филиалов <br> в 5 странах мира</p>
+                    <h3><span>Четкие графики!</span></h3>
+                    <p>Гомель 5 рейсов в неделю, Гродно, Витебск - 4 рейса</p>
                 </div>
                 <div class="module__info">
-                    <h3><span>Доставка</span></h3>
-                    <p>Широкая география <br> в 5 странах мира</p>
+                    <h3><span>-20% для новых клиентов!</span></h3>
+                    <p>Для новых юридических лиц. На услугу Перевозка по Беларуси</p>
                 </div>
-                <img class="module__slide showing" src="assets/img/module_pic2.jpg" alt=""/>
-                <img class="module__slide" src="assets/img/module_pic1.jpg" alt=""/>
-                <img class="module__slide" src="assets/img/module_pic2old.jpg" alt=""/>
+                <img class="module__slide showing" src="assets/img/slide1.jpg" alt=""/>
+                <img class="module__slide" src="assets/img/slide2.jpg" alt=""/>
+                <img class="module__slide" src="assets/img/slide3.jpg" alt=""/>
             </div>
 
             <!--блок "Калькулятор перевозки!"-->
@@ -215,6 +215,7 @@
 
                     </div>
                     <p class="module__sum"><b>0 BYN с НДС</b></p>
+                    <p class="module__message hidden">Выбранная услуга рассчитывается индивидуально. Рекомендуем связаться с менеджером по телефону +375173362323, либо заполнить форму обратной связи</p>
                 </form>
 
 
@@ -741,16 +742,18 @@
                 <div id="news-slider">
 
                     <article class="news__article">
-                        <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
+                        <h3 class="news__title"><a href="#">-10% на доставку и забор груза в г. Минске</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news-1.gif">
+                                <img src="assets/img/news1.jpg">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
                                     <span class="news__date">03.03.2020 г.</span>
                                     <span class="news__description">
-                                      <p>Скидка -10% на услугу: Перевозка в/из Минск. <br><br>10 городов России.</p>
+                                      <p>Скидки не суммируются.
+                                            Не просчитывается на калькуляторе. Действует на период короновируса.
+                                            Мы заботимся о вашем здоровье. </p>
                                     </span>
                                     <a class="btn news__btn" href="#">
                                         <span>Подробнее</span>
@@ -760,16 +763,17 @@
                         </div>
                     </article>
                     <article class="news__article">
-                        <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
+                        <h3 class="news__title"><a href="#">-20% для новых клиентов</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news-2.jpg">
+                                <img src="assets/img/news2.png">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
                                     <span class="news__date">07.03.2020 г.</span>
                                     <span class="news__description">
-                                      <p>Скидка -10% на услугу: Перевозка в/из Минск. <br><br>10 городов России.</p>
+                                      <p>Для новых юридических лиц.
+                                            <br><br>На услугу “Перевозка по Беларуси”</p>
                                     </span>
                                     <a class="btn news__btn" href="#">
                                         <span>Подробнее</span>
@@ -780,16 +784,16 @@
                     </article>
 
                     <article class="news__article">
-                        <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
+                        <h3 class="news__title"><a href="#">Больше – дешевле!</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news-3.png">
+                                <img src="assets/img/news3.png">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
                                     <span class="news__date">07.03.2020 г.</span>
                                     <span class="news__description">
-                                      <p>Скидка -10% на услугу: Перевозка в/из Минск. <br><br>10 городов России.</p>
+                                      <p>Свыше 5 точек выгрузки скидка -10%</p>
                                     </span>
                                     <a class="btn news__btn" href="#">
                                         <span>Подробнее</span>
@@ -799,25 +803,7 @@
                         </div>
                     </article>
 
-                    <article class="news__article">
-                        <h3 class="news__title"><a href="#">Весенняя акция</a></h3>
-                        <div class="news__item">
-                            <figure class="news__figure">
-                                <img src="assets/img/news-4.jpg">
-                            </figure>
-                            <div class="news__inner">
-                                <div class="news__content">
-                                    <span class="news__date">07.03.2020 г.</span>
-                                    <span class="news__description">
-                                      <p>Скидка -10% на услугу: Перевозка в/из Минск. <br><br>10 городов России.</p>
-                                    </span>
-                                    <a class="btn news__btn" href="#">
-                                        <span>Подробнее</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+
 
                 </div>
                 <!--
@@ -1006,6 +992,30 @@
 
 
 <div class="preloader hid"></div>
+
+<div class="modal">
+    <form class="form-call">
+        <h3>офорить заявку</h3>
+        <label>
+            Ваше имя
+            <input type="text" name="client-name">
+        </label>
+        <label>
+            Номер телефона
+            <input type="text" name="phone">
+        </label>
+        <button class="btn">оформть заявку</button>
+        <button class="btn-close">&#215;</button>
+    </form>
+</div>
+
+<ul class="widgets-btn">
+    <li class="widgets-btn__icon viber"><a href="#" target="_blank" rel="nofollow">перейти в вайбер</a></li>
+    <li class="widgets-btn__icon phone"><a href="#" target="_blank" rel="nofollow">заказать звонок</a></li>
+    <li class="widgets-btn__icon calculator"><a href="#" target="_blank" rel="nofollow">рассчитать</a></li>
+    <li class="widgets-btn__icon top"><a href="#header" rel="nofollow"></a></li>
+</ul>
+
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

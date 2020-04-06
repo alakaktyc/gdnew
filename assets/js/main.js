@@ -411,7 +411,7 @@ document.querySelector('.module__slider-row--right').addEventListener('click', f
 
 
 function replaceToNum() {
-    this.value = this.value.replace(/\D/g,'')
+    this.value = this.value.replace(/,/, '.').replace(/[^.\d]+/g,"").replace( /^([^\.]*\.)|\./g, '$1' );
 }
 
 const weightInput = document.querySelector('input[name="weight"]');
@@ -429,3 +429,19 @@ btnReverse.addEventListener('click', function (event) {
     selectDep.textContent = selectDes.textContent;
     selectDes.textContent = tempCity;
 });
+
+
+const btnCall = document.querySelector('.btn-request');
+const btnClose = document.querySelector('.btn-close');
+let modalCall = document.querySelector('.modal');
+btnCall.addEventListener('click', function (event) {
+    event.preventDefault();
+    modalCall.classList.add('open')
+});
+
+btnClose.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.querySelector('.form-call').reset();
+    modalCall.classList.remove('open')
+});
+

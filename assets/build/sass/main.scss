@@ -1,4 +1,4 @@
-@import "normalize";
+//@import "normalize";
 
 @font-face {
   font-family: 'Intro-Bold';
@@ -225,6 +225,12 @@ a {
   justify-content: space-around;
 }
 
+.little-content {
+  display: block;
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+
 .header .flex-box {
   display: block;
 }
@@ -270,8 +276,9 @@ a {
 .header__about {
   display: flex;
   text-align: end;
+  justify-content: space-between;
   align-items: baseline;
-
+  width: 100%;
   & > p {
     display: flex;
     align-items: center;
@@ -640,6 +647,7 @@ input::-webkit-inner-spin-button {
   @include font($familyReg, 1.2em);
   text-align: center;
   border: 0;
+  color: #666667;
   background: transparent;
   outline: none;
   &.module__input--weight {
@@ -1136,10 +1144,8 @@ input::-webkit-inner-spin-button {
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
-  :last-child {
-    margin-left: 60px;
-  }
   &__icon {
+    position: relative;
     display: block;
     width: 32px;
     height: 32px;
@@ -1154,7 +1160,8 @@ input::-webkit-inner-spin-button {
     transition: all 0.5s;
     &:hover {
       cursor: pointer;
-      opacity: 0.8;
+      opacity: 0.6;
+      transform: scale(1.1);
       transition: all 0.5s;
     }
   }
@@ -1162,6 +1169,7 @@ input::-webkit-inner-spin-button {
     background: url('../img/icon_instagram.png') no-repeat center center;
   }
   &__icon.viber {
+    margin-left: 60px;
     background: url('../img/icon_viber.png') no-repeat center center;
   }
   &__icon.vk {
@@ -1169,6 +1177,10 @@ input::-webkit-inner-spin-button {
   }
   &__icon.fb {
     background: url('../img/icon_f.png') no-repeat center center;
+  }
+  &__icon.telegram {
+    background: url('../img/icon_telegram.png') no-repeat center center;
+    background-size: contain;
   }
 }
 
@@ -1277,7 +1289,7 @@ input::-webkit-inner-spin-button {
 
   .header {
     position: relative;
-    top: 25px;
+    top: 0;
     z-index: 2;
     .flex-box {
       display: flex;
@@ -1305,7 +1317,9 @@ input::-webkit-inner-spin-button {
     align-items: flex-start;
   }
 
-  .header__about{
+  .header__about {
+    justify-content: flex-end;
+    width: 50%;
     .header__contacts {
       margin-left: 49px;
       span {
@@ -1323,7 +1337,7 @@ input::-webkit-inner-spin-button {
     align-items: flex-start;
     justify-content: space-between;
     height: 47px;
-    margin-top: 28px;
+    margin-top: 10px;
     padding: 10px 23px;
     box-sizing: border-box;
     color: #fff;
@@ -1480,8 +1494,9 @@ input::-webkit-inner-spin-button {
   }
 
   main {
-    margin-top: -224px;
     position: relative;
+    margin-top: -224px;
+    padding-bottom: 2em;
   }
 
   .module {
@@ -1545,7 +1560,7 @@ input::-webkit-inner-spin-button {
     &.module__item--right {
       width: 455px;
       margin-left: 70px;
-      padding-top: 295px;
+      padding-top: 240px;
       .title-section {
         margin: 0;
         padding: 0 0 15px;
@@ -1989,4 +2004,20 @@ input::-webkit-inner-spin-button {
   .tariffs {
     overflow-x: hidden;
   }
+}
+
+@media screen and (min-height: 800px) {
+
+  .header {
+    top: 25px;
+  }
+
+  .header__menu {
+    margin-top: 28px;
+  }
+
+  .module__item.module__item--right {
+      padding-top: 295px;
+  }
+
 }

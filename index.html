@@ -31,7 +31,13 @@
             </div>
 
             <div class="header__about">
-                <p>Пн-Пт с 08.30-18.00</p>
+              <div class="header__shedules">
+                <p>
+                  Пн-Пт с 08.30-18.00</br>
+                  <span class="little-content">Время работы</br> Контакт-центра</span>
+                </p>
+              </div>
+
                 <div class="header__contacts">
                     <p>+375 (17)<span>336-24-24</span></p>
                     <a href="">Заказать звонок</a>
@@ -115,6 +121,7 @@
                 <img class="module__slide" src="assets/img/module_pic2old.jpg" alt=""/>
             </div>
 
+            <!--блок "Калькулятор перевозки!"-->
 
             <div class="module__item module__item--right">
                 <form class="calculate" action="">
@@ -122,12 +129,12 @@
                     <div class="module__cities">
 
                         <label for="cityFrom">Город отправления</label>
-                        <input type="text" id="cityFrom" value="Беларусь, Минск">
+                        <input type="text" id="cityFrom" value="Беларусь, Минск" required>
 
                         <button class="module__btn"><img src="assets/img/rows.svg" alt=""/></button>
 
                         <label for="cityTo">Город доставки</label>
-                        <input type="text" id="cityTo">
+                        <input type="text" id="cityTo" value="Беларусь, Минск" required>
 
                     </div>
 
@@ -135,8 +142,7 @@
 
                         <label class="module__data module__data--weight">
                             Вес
-                            <input class="module__input module__input--weight" type="text" name="weight"
-                                   placeholder="0.2"><span>кг</span>
+                            <input class="module__input module__input--weight" type="text" name="weight"                                   placeholder="0.2" required><span>кг</span>
 
                         </label>
 
@@ -158,11 +164,11 @@
 
                                 <label class="module__data module__data--switching">
                                     <input class="module__input" type="text" placeholder="0.5" maxlength="3"
-                                           name="dimensions"><span>x</span>
+                                           name="dimensions" required><span>x</span>
                                     <input class="module__input" type="text" placeholder="0.5" maxlength="3"
-                                           name="dimensions"><span>x</span>
+                                           name="dimensions" required><span>x</span>
                                     <input class="module__input" type="text" placeholder="0.8" maxlength="3"
-                                           name="dimensions"><span>м</span>
+                                           name="dimensions" required><span>м</span>
                                 </label>
 
 
@@ -208,11 +214,13 @@
                         <p class="module__date"><b>30.05.2020</b> <span>— дата доставки</span></p>
 
                     </div>
-                    <p class="module__sum"><b>150 BYN с НДС</b></p>
+                    <p class="module__sum"><b>0 BYN с НДС</b></p>
                 </form>
 
 
             </div>
+            <!--конец блока "Калькулятор перевозки!"-->
+
         </div>
 
 
@@ -248,6 +256,7 @@
             </div>
         </section>
 
+        <!-- Блок Тарифы !-->
         <section id="tariffs" class="tariffs">
             <div class="container">
                 <h2 class="title-section">Тарифы</h2>
@@ -258,14 +267,12 @@
                         <span class="tariffs__control"><span class="tariffs__select tariffs__departure">Минск</span> <i
                                 class="arrow down"></i></span>
                         <div class="tariffs__content hidden tariffs--departure">
-
                             <span class="tariffs__option">Минск</span>
                             <span class="tariffs__option">Брест</span>
                             <span class="tariffs__option">Витебск</span>
                             <span class="tariffs__option">Гродно</span>
                             <span class="tariffs__option">Гомель</span>
                             <span class="tariffs__option">Могилев</span>
-
                             <span class="tariffs__option">Барановичи</span>
                             <span class="tariffs__option">Барань</span>
                             <span class="tariffs__option">Белоозерск</span>
@@ -372,7 +379,6 @@
                             <span class="tariffs__option">Чечерск</span>
                             <span class="tariffs__option">Шклов</span>
                             <span class="tariffs__option">Щучин</span>
-
 
                         </div>
                     </div>
@@ -515,7 +521,7 @@
 
                     <button class="btn tariffs__btn btn--white"><span>Узнать тариф</span></button>
                 </div>
-                <p>Цены указаны на услугу <b>«Перевозка сборных грузов»</b> из/в Минск <b>от подъезда — к подъезду</b>.
+                <p>Цены указаны на услугу <b>«Перевозка сборных грузов»</b> <b>от подъезда — к подъезду. Без действующих скидок</b>.
                     Без действующих скидок.</p>
                 <div class="tariffs__table">
                     <table class="tariffs__cargo visible" cellspacing="0">
@@ -574,28 +580,28 @@
                         </tr>
                         <tr>
                             <td class="tariffs__table-head">цена (byn)</td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
-                            <td class="tariffs__price"></td>
+                            <td class="tariffs__price">7.20</td>
+                            <td class="tariffs__price">8.40</td>
+                            <td class="tariffs__price">10.80</td>
+                            <td class="tariffs__price">13.20</td>
+                            <td class="tariffs__price">15.00</td>
+                            <td class="tariffs__price">18.00</td>
+                            <td class="tariffs__price">16.80</td>
+                            <td class="tariffs__price">18.00</td>
+                            <td class="tariffs__price">22.90</td>
+                            <td class="tariffs__price">23.80</td>
+                            <td class="tariffs__price">25.60</td>
+                            <td class="tariffs__price">28.50</td>
+                            <td class="tariffs__price">29.70</td>
+                            <td class="tariffs__price">33.60</td>
+                            <td class="tariffs__price">39.60</td>
+                            <td class="tariffs__price">47.00</td>
+                            <td class="tariffs__price">54.15</td>
+                            <td class="tariffs__price">63.65</td>
+                            <td class="tariffs__price">76.50</td>
+                            <td class="tariffs__price">94.50</td>
+                            <td class="tariffs__price">100.00</td>
+                            <td class="tariffs__price">105.00</td>
                         </tr>
 
                         </tbody>
@@ -728,7 +734,7 @@
             </div>
 
         </section>
-
+        <!-- Конец Блок Тарифы !-->
         <section id="news" class="news">
             <div class="container">
                 <h2 class="title-section title-section--group">Новости <a>Все новости</a></h2>
@@ -947,9 +953,9 @@
                 </li>
                 <li class="contacts__icon clock">
                     <p>
-                        <strong>Пн - Пт</strong>9:00-20:00 (сдача груза до 18.00)
-                        <strong>Сб</strong>9:00 - 14:00
-                        <strong>Вс</strong>выходной
+                        <strong>Пн - Пт </strong>9:00-20:00 (сдача груза до 18.00)
+                        <strong>Сб </strong>9:00 - 14:00
+                        <strong>Вс </strong>выходной
                     </p>
                 </li>
                 <li class="contacts__icon phone">
@@ -970,9 +976,9 @@
                 </li>
                 <li class="contacts__icon clock">
                     <p>
-                        <strong>Пн - Пт</strong>9:00-17:30
-                        <strong>Сб</strong>9:30 - 14:00
-                        <strong>Вс</strong>выходной
+                        <strong>Пн - Пт </strong>9:00-17:30
+                        <strong>Сб </strong>9:30 - 14:00
+                        <strong>Вс </strong>выходной
                     </p>
                 </li>
                 <li class="contacts__icon phone">
@@ -991,6 +997,7 @@
                 <li class="social__icon fb"><a href="#" target="_blank" rel="nofollow" title="Перейти на нашу Facebook-страницу">фейсбук</a></li>
                 <li class="social__icon vk"><a href="#" target="_blank" rel="nofollow" title="Перейти в нашу группу Vk">Вконтакте</a></li>
                 <li class="social__icon viber"><a href="#" target="_blank" rel="nofollow" title="Перейти в Вайбер">Вайбер</a></li>
+                <li class="social__icon telegram"><a href="#" target="_blank" rel="nofollow" title="Перейти в Телеграм">Телеграм</a></li>
             </ul>
 
         </div>

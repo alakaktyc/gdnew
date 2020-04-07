@@ -31,16 +31,16 @@
             </div>
 
             <div class="header__about">
-              <div class="header__shedules">
-                <p>
-                  Пн-Пт с 08.30-18.00</br>
-                  <span class="little-content">Время работы</br> Контакт-центра</span>
-                </p>
-              </div>
+                <div class="header__shedules">
+                    <p>
+                        Пн-Пт с 08.30-18.00</br>
+                        <span class="little-content">Время работы</br> Контакт-центра</span>
+                    </p>
+                </div>
 
                 <div class="header__contacts">
                     <p>+375 (17)<span>336-24-24</span></p>
-                    <a href="">Заказать звонок</a>
+                    <a class="btn-request" href="">Заказать звонок</a>
                 </div>
             </div>
         </div>
@@ -54,24 +54,24 @@
 
                 <li class="header__menu-drop"><a href="#services"><span>Услуги</span></a>
                     <ul class="header__menu-sub">
-                       <!-- <li><a href="#">Вакансии</a></li>
-                        <li><a href="#">Тарифы</a></li>
-                        <li><a href="#">Вопрос и ответ</a></li>
-                        <li><a href="#">Франшиза</a></li>
-                        <li><a href="#">Виды транспорта</a></li>-->
+                        <!-- <li><a href="#">Вакансии</a></li>
+                         <li><a href="#">Тарифы</a></li>
+                         <li><a href="#">Вопрос и ответ</a></li>
+                         <li><a href="#">Франшиза</a></li>
+                         <li><a href="#">Виды транспорта</a></li>-->
                     </ul>
                 </li>
 
                 <li class="header__menu-drop"><a href="#tariffs"><span>Тарифы</span></a>
                     <ul class="header__menu-sub">
-                       <!-- <li><a href="#">Перевозка грузов</a></li>
-                        <li><a href="#">Паллетная доставка</a></li>
-                        <li><a href="#">Полные машины</a></li>
-                        <li><a href="#">Забор и доставка грузов</a></li>
-                        <li><a href="#">По городу и области</a></li>
-                        <li><a href="#">Авиаперевозка</a></li>
-                        <li><a href="#">Южный экспресс</a></li>
-                        <li><a href="#">Северный экспресс</a></li>-->
+                        <!-- <li><a href="#">Перевозка грузов</a></li>
+                         <li><a href="#">Паллетная доставка</a></li>
+                         <li><a href="#">Полные машины</a></li>
+                         <li><a href="#">Забор и доставка грузов</a></li>
+                         <li><a href="#">По городу и области</a></li>
+                         <li><a href="#">Авиаперевозка</a></li>
+                         <li><a href="#">Южный экспресс</a></li>
+                         <li><a href="#">Северный экспресс</a></li>-->
                     </ul>
                 </li>
 
@@ -104,21 +104,34 @@
                     <span class="module__slider-row--Left"><i class="left"></i></span>
                     <span class="module__slider-row--right"><i class="right"></i></span>
                 </div>
+
                 <div class="module__info showing">
                     <h3><span>Без предоплат</span></h3>
                     <p>Для физических и юридических лиц</p>
                 </div>
                 <div class="module__info">
                     <h3><span>Четкие графики!</span></h3>
-                    <p>Гомель 5 рейсов в неделю, Гродно, Витебск - 4 рейса</p>
+                    <p>Гомель 5 рейсов в неделю <br>
+                        Гродно, Витебск - 4 рейса в неделю <br>
+                        Брест, Могилёв - 3 рейса в неделю
+                    </p>
                 </div>
                 <div class="module__info">
                     <h3><span>-20% для новых клиентов!</span></h3>
-                    <p>Для новых юридических лиц. На услугу Перевозка по Беларуси</p>
+                    <p>Для новых юридических лиц. На услугу Перевозка по Беларуси <br>
+                        *скидки не суммируются
+                    </p>
                 </div>
-                <img class="module__slide showing" src="assets/img/slide1.jpg" alt=""/>
-                <img class="module__slide" src="assets/img/slide2.jpg" alt=""/>
-                <img class="module__slide" src="assets/img/slide3.jpg" alt=""/>
+
+                <figure class="module__slide showing">
+                    <img src="assets/img/slide-1_glavdostavka.jpg" alt=""/>
+                </figure>
+                <figure class="module__slide">
+                    <img src="assets/img/slide-2_glavdostavka.jpg" alt=""/>
+                </figure>
+                <figure class="module__slide">
+                    <img src="assets/img/slide-3_glavdostavka.jpg" alt=""/>
+                </figure>
             </div>
 
             <!--блок "Калькулятор перевозки!"-->
@@ -129,12 +142,12 @@
                     <div class="module__cities">
 
                         <label for="cityFrom">Город отправления</label>
-                        <input type="text" id="cityFrom" value="Беларусь, Минск" required>
+                        <input type="text" id="cityFrom" required>
 
                         <button class="module__btn"><img src="assets/img/rows.svg" alt=""/></button>
 
                         <label for="cityTo">Город доставки</label>
-                        <input type="text" id="cityTo" value="Беларусь, Минск" required>
+                        <input type="text" id="cityTo" required>
 
                     </div>
 
@@ -142,7 +155,7 @@
 
                         <label class="module__data module__data--weight">
                             Вес
-                            <input class="module__input module__input--weight" type="text" name="weight"                                   placeholder="0.2" required><span>кг</span>
+                            <input class="module__input module__input--weight" type="text" name="weight" placeholder="0.0" required><span>кг</span>
 
                         </label>
 
@@ -163,18 +176,18 @@
                                 </label>
 
                                 <label class="module__data module__data--switching">
-                                    <input class="module__input" type="text" placeholder="0.5" maxlength="3"
+                                    <input class="module__input" type="text" placeholder="0.0" maxlength="3"
                                            name="dimensions" required><span>x</span>
-                                    <input class="module__input" type="text" placeholder="0.5" maxlength="3"
+                                    <input class="module__input" type="text" placeholder="0.0" maxlength="3"
                                            name="dimensions" required><span>x</span>
-                                    <input class="module__input" type="text" placeholder="0.8" maxlength="3"
+                                    <input class="module__input" type="text" placeholder="0.0" maxlength="3"
                                            name="dimensions" required><span>м</span>
                                 </label>
 
 
                                 <label class="module__data module__data--switching">
                                     <input class="module__input" name="volume" type="text"
-                                           placeholder="0.2" disabled><span>м<sup>3</sup></span>
+                                           placeholder="0.0" disabled><span>м<sup>3</sup></span>
                                 </label>
 
 
@@ -210,8 +223,8 @@
                     </div>
 
                     <div class="flex-box">
-                        <p class="module__date"><b>20.05.2020</b> <span>— дата забора</span></p>
-                        <p class="module__date"><b>30.05.2020</b> <span>— дата доставки</span></p>
+                        <p class="module__date"><b>00.00.2020</b> <span>— дата забора</span></p>
+                        <p class="module__date"><b>00.00.2020</b> <span>— дата доставки</span></p>
 
                     </div>
                     <p class="module__sum"><b>0 BYN с НДС</b></p>
@@ -522,7 +535,7 @@
 
                     <button class="btn tariffs__btn btn--white"><span>Узнать тариф</span></button>
                 </div>
-                <p>Цены указаны на услугу <b>«Перевозка сборных грузов»</b> <b>от подъезда — к подъезду. Без действующих скидок</b>.
+                <p>Цены указаны на услугу <b>«Перевозка сборных грузов»</b> <b>от подъезда — к подъезду.</b>.
                     Без действующих скидок.</p>
                 <div class="tariffs__table">
                     <table class="tariffs__cargo visible" cellspacing="0">
@@ -580,7 +593,7 @@
                             <td>1499</td>
                         </tr>
                         <tr>
-                            <td class="tariffs__table-head">цена (byn)</td>
+                            <td class="tariffs__table-head">цена (бел. руб.)</td>
                             <td class="tariffs__price">7.20</td>
                             <td class="tariffs__price">8.40</td>
                             <td class="tariffs__price">10.80</td>
@@ -613,7 +626,7 @@
                         <tbody>
 
                         <tr>
-                            <td class="tariffs__table-head">количество паллет</td>
+                            <td class="tariffs__table-head">количество паллет (шт.)</td>
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
@@ -622,7 +635,7 @@
                         </tr>
 
                         <tr>
-                            <td class="tariffs__table-head">цена</td>
+                            <td class="tariffs__table-head">цена (бел. руб.)</td>
                             <td class="tariffs__pallet-price"></td>
                             <td class="tariffs__pallet-price"></td>
                             <td class="tariffs__pallet-price"></td>
@@ -876,25 +889,29 @@
                     <div class="payment__item">
                         <div class="payment__content">
                             <h3>1. ерип</h3>
-                            <p>Транспортные, экспедиционные услуги / Минск / ТМФ-Транс (номер услуги - 4673671)</p>
+                            <p>Транспортные, экспедиционные услуги / Минск / ТМФ-Транс (номер услуги - 4673671, для физических лиц, в бел. руб)</p>
                         </div>
                     </div>
                     <div class="payment__item">
                         <div class="payment__content">
                             <h3>2. наличные</h3>
-                            <p>При доставке водителю</p>
+                            <p>При доставке водителю <br>
+                                (для физических лиц, в бел. руб)
+                            </p>
                         </div>
                     </div>
                     <div class="payment__item">
                         <div class="payment__content">
                             <h3>3. карта</h3>
-                            <p>При доставке водителю</p>
+                            <p>При доставке водителю<br>
+                                (для физических лиц, в бел. руб)
+                            </p>
                         </div>
                     </div>
                     <div class="payment__item">
                         <div class="payment__content">
                             <h3>4. безналичный расчёт</h3>
-                            <p>Для юридических лиц</p>
+                            <p>Для юридических лиц, в бел. руб.</p>
                         </div>
                     </div>
                 </div>
@@ -923,7 +940,7 @@
                         <a><span>Обувь в краснодар</span></a>
                         <a><span>Холодильник в Казань</span></a>
                     </div>
-                    <button class="btn"><span>Отправить заявку</span></button>
+                    <button class="btn btn-request"><span>Отправить заявку</span></button>
                 </div>
             </form>
             <div class="footer__copyright">
@@ -1010,10 +1027,10 @@
 </div>
 
 <ul class="widgets-btn">
-    <li class="widgets-btn__icon viber"><a href="#" target="_blank" rel="nofollow">перейти в вайбер</a></li>
+    <!--<li class="widgets-btn__icon viber"><a href="#" target="_blank" rel="nofollow">перейти в вайбер</a></li>-->
     <li class="widgets-btn__icon phone"><a href="#" target="_blank" rel="nofollow">заказать звонок</a></li>
     <li class="widgets-btn__icon calculator"><a href="#" target="_blank" rel="nofollow">рассчитать</a></li>
-    <li class="widgets-btn__icon top"><a href="#header" rel="nofollow"></a></li>
+    <li class="widgets-btn__icon top"><a href="#" rel="nofollow"></a></li>
 </ul>
 
 

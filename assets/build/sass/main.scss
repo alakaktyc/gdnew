@@ -1,4 +1,4 @@
-@import "normalize";
+//@import "normalize";
 
 @font-face {
   font-family: 'Intro-Bold';
@@ -157,6 +157,7 @@ a {
   background: $backgroundRed;
   cursor: pointer;
   transition: .4s;
+  z-index: 10;
 
   &:hover {
     background: linear-gradient(270deg, #A91F23 0%, #C3464C 52.6%, #C64A51 100%);
@@ -350,97 +351,97 @@ a {
   }
 }
 
-.module__item {
-  position: relative;
-  width: 100%;
-  height: auto;
-
-  &.module__item--right .title-section {
-    padding: 15px 0 15px;
-    font-size: 1.25em;
-    text-align: center;
-  }
-
-  &.module__item--left,
-  &.module__item--right {
-    position: relative;
-  }
-  & > img {
+// исправления от 200407
+.module {
+  &__item {
     width: 100%;
-    filter: contrast(70%) brightness(70%);
+    height: auto;
+    &--right {
+      position: relative;
+      .title-section {
+        padding: 15px 0 15px;
+        font-size: 1.25em;
+        text-align: center;
+      }
+    }
   }
-
-  .module__info {
+  &__info {
     position: absolute;
-    z-index: 1;
-    top: 15%;
+    top: 10%;
     right: 0;
     width: 95%;
     color: #fff;
     font-size: 1em;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
     & > p {
       margin-bottom: 0;
     }
-  }
-  .module__info {
-    opacity: 0;
-    transition: opacity 1s;
-
     &.showing {
       opacity: 1;
     }
   }
-}
-
-.module__slider-control {
-  display: none;
-}
-
-.module__slide {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s;
-
-  &.showing {
-    opacity: 1;
+  &__slider-control {
+    display: none;
   }
-  &:last-child {
-    position: relative;
-  }
-}
-
-.module__cities {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-  & > label {
-    position: relative;
-    margin-top: 13px;
-    margin-bottom: 3px;
-    @include font($familyBold, 0.8em);
+  &__slide {
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    &.showing {
+      opacity: 1;
+    }
     &::before {
       position: absolute;
-      background: #A91F23;
-      height: 2px;
-      content: '';
-      width: 180px;
-      top: 40px;
+      top: 0;
       left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      content: '';
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
-  & > input {
+  &__cities {
     position: relative;
-    width: 100%;
-    padding-bottom: 5px;
-    border: 0;
-    border-bottom: 1px solid rgba(56, 56, 56, 0.28);
-    background: transparent;
-    outline: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    & > label {
+      position: relative;
+      margin-top: 13px;
+      margin-bottom: 3px;
+      @include font($familyBold, 0.8em);
+      &::before {
+        position: absolute;
+        background: #A91F23;
+        height: 2px;
+        content: '';
+        width: 180px;
+        top: 40px;
+        left: 0;
+      }
+    }
+    & > input {
+      position: relative;
+      width: 100%;
+      padding-bottom: 5px;
+      border: 0;
+      border-bottom: 1px solid rgba(56, 56, 56, 0.28);
+      background: transparent;
+      outline: none;
+    }
   }
-
 }
-
+// исправления от 200407 конец
 .module__content,
 .module__cities {
   margin-left: 24px;
@@ -1181,7 +1182,7 @@ input::-webkit-inner-spin-button {
     background: url('../img/icon_instagram.png') no-repeat center center;
   }
   &__icon.viber {
-    margin-left: 60px;
+    margin-left: 34px;
     background: url('../img/icon_viber.png') no-repeat center center;
   }
   &__icon.vk {
@@ -1281,7 +1282,7 @@ input::-webkit-inner-spin-button {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0 20px;
     background: #F0F0FC;
     border-radius: 10px;
     h3 {
@@ -1328,11 +1329,84 @@ input::-webkit-inner-spin-button {
       }
     }
   }
-  .widgets-btn {
-    display: none;
+}
+.widgets-btn {
+  position: fixed;
+  bottom: 30%;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+  &__icon {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: 10px 0;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #A91F23 0%, #C3464C 52.6%, #C64A51 100%);
+    opacity: 0.3;
+    transition: all 0.5s;
+    &:hover {
+      opacity: 1;
+      transition: all 0.5s;
+    }
+    a {
+      position: relative;
+      display: block;
+      width: 56px;
+      height: 56px;
+      font-size: 0;
+      &::after {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        display: block;
+        width: 26px;
+        height: 26px;
+        content: '';
+      }
+    }
+  }
+  &__icon.viber a::after {
+    background: url("../img/icon_viber.png") center center no-repeat;
+    background-size: contain;
+  }
+  &__icon.phone a::after {
+    top: 18px;
+    left: 18px;
+    width: 20px;
+    height: 20px;
+    background: url("../img/icon_phone.png") center center no-repeat;
+    background-size: contain;
+  }
+  &__icon.calculator a::after {
+    top: 17px;
+    left: 17px;
+    width: 22px;
+    height: 22px;
+    background: url("../img/icon_calc.png") center center no-repeat;
+    background-size: contain;
+  }
+  &__icon.top a::after {
+    top: 20px;
+    left: 15px;
+    width: 17px;
+    height: 17px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+  }
+  &.show {
+    visibility: visible;
+    opacity: 0.6;
+    transition: opacity 2s linear;
   }
 }
-
 
 
 @media screen and (min-width: 640px) {
@@ -1476,20 +1550,20 @@ input::-webkit-inner-spin-button {
 
         & > a {
           position: relative;
-//Стрелки выпадающего меню
-/*          &::before {
-            position: absolute;
-            top: 5px;
-            right: -16px;
-            display: block;
-            width: 5px;
-            height: 5px;
-            border-top: 1px solid #fff;
-            border-right: 1px solid #fff;
-            transform: rotate(135deg);
-            transition: .4s;
-            content: '';
-          }*/
+          //Стрелки выпадающего меню
+          /*          &::before {
+                      position: absolute;
+                      top: 5px;
+                      right: -16px;
+                      display: block;
+                      width: 5px;
+                      height: 5px;
+                      border-top: 1px solid #fff;
+                      border-right: 1px solid #fff;
+                      transform: rotate(135deg);
+                      transition: .4s;
+                      content: '';
+                    }*/
         }
       }
 
@@ -1593,7 +1667,9 @@ input::-webkit-inner-spin-button {
   .module {
     background-color: #F0F0FC;
     .container {
+      position: relative;
       display: flex;
+      justify-content: flex-end;
     }
     h3 {
       font-size: 2em;
@@ -1612,58 +1688,53 @@ input::-webkit-inner-spin-button {
         }
       }
     }
-  }
-
-  .module__item {
-    width: 50%;
-    .module__slide {
+    &__item {
+      width: 50%;
+      &--left {
+        width: 75%;
+        p {
+          font-size: 1.1em;
+        }
+      }
+      &--right {
+        width: 455px;
+        margin-left: 70px;
+        padding-top: 240px;
+        .title-section {
+          margin: 0;
+          padding: 0 0 15px;
+          font-size: 1.25em;
+          text-align: center;
+        }
+      }
+    }
+    &__slide {
       position: absolute;
       top: 0;
-      right: 0;
-      width: 1465px;
-      height: 824px;
-      object-fit: cover;
+      right: 400px;
+      width: 100%;
+      height: calc(100% + 50px);
+      margin: 0;
       box-shadow: 10px 0 25px 0 rgba(0, 0, 0, 0.46);
       opacity: 0;
       transition: opacity 1s;
       &.showing {
         opacity: 1;
-      }
-
-      .module__info {
-        opacity: 0;
         transition: opacity 1s;
-        &.showing {
-          opacity: 1;
-        }
-      }
-
-      img {
-        width: 100%;
       }
     }
-    &.module__item--left {
-      width: 60%;
-      p {
-        font-size: 1.1em;
-      }
-    }
-    &.module__item--right {
-      width: 455px;
-      margin-left: 70px;
-      padding-top: 240px;
-      .title-section {
-        margin: 0;
-        padding: 0 0 15px;
-        font-size: 1.25em;
-        text-align: center;
-      }
-    }
-    .module__info {
+    &__info {
       top: 73%;
       left: 0;
+      width: 40%;
+      opacity: 0;
+      transition: opacity 1s;
+      &.showing {
+        opacity: 1;
+      }
     }
   }
+
 
   .module__slider-control {
     position: absolute;
@@ -1962,78 +2033,7 @@ input::-webkit-inner-spin-button {
     display: flex;
   }
 
-
-  .widgets-btn {
-    position: fixed;
-    bottom: 30%;
-    right: 50px;
-    display: flex;
-    flex-direction: column;
-    &__icon {
-      display: block;
-      width: 56px;
-      height: 56px;
-      margin: 10px 0;
-      border-radius: 50%;
-      box-sizing: border-box;
-      background: linear-gradient(90deg, #A91F23 0%, #C3464C 52.6%, #C64A51 100%);
-      opacity: 0.3;
-      transition: all 0.5s;
-      &:hover {
-        opacity: 1;
-        transition: all 0.5s;
-      }
-      a {
-        position: relative;
-        display: block;
-        width: 56px;
-        height: 56px;
-        font-size: 0;
-        &::after {
-          position: absolute;
-          top: 15px;
-          left: 15px;
-          display: block;
-          width: 26px;
-          height: 26px;
-          content: '';
-        }
-      }
-    }
-    &__icon.viber a::after {
-      background: url("../img/icon_viber.png") center center no-repeat;
-      background-size: contain;
-    }
-    &__icon.phone a::after {
-      top: 18px;
-      left: 18px;
-      width: 20px;
-      height: 20px;
-      background: url("../img/icon_phone.png") center center no-repeat;
-      background-size: contain;
-    }
-    &__icon.calculator a::after {
-      top: 17px;
-      left: 17px;
-      width: 22px;
-      height: 22px;
-      background: url("../img/icon_calc.png") center center no-repeat;
-      background-size: contain;
-    }
-    &__icon.top a::after {
-      top: 20px;
-      left: 15px;
-      width: 17px;
-      height: 17px;
-      border: solid #fff;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(-135deg);
-    }
-  }
-
-
+  // исправления от 200407
 
 }
 
@@ -2164,7 +2164,20 @@ input::-webkit-inner-spin-button {
 
 }
 
-@media screen and (min-width: 1400px) {
+// исправления от 200407
+
+@media screen and (min-width: 1366px) {
+
+  .module {
+    &__slide {
+      position: absolute;
+      top: 0;
+      right: 470px;
+    }
+    &__info {
+      width: 100%;
+    }
+  }
 
   .tariffs {
     overflow-x: hidden;
@@ -2182,7 +2195,9 @@ input::-webkit-inner-spin-button {
   }
 
   .module__item.module__item--right {
-      padding-top: 295px;
+    padding-top: 295px;
   }
 
 }
+
+// исправления от 200407 конец

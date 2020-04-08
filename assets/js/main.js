@@ -58,7 +58,7 @@ plusPlace.addEventListener('click',function () {
 });
 minusPlace.addEventListener('click',function () {
     if (!quantityPlace.hasAttribute('disabled')) {
-        if (quantityPlace.value > 0){
+        if (quantityPlace.value > 1){
             quantityPlace.value--
         }
     }
@@ -152,22 +152,8 @@ for (let i = 0; i < radioVD.length; i++) {
 //autocomplete
 ymaps.ready(autocomplete);
 function autocomplete() {
-    let cityFrom = new ymaps.SuggestView('cityFrom', {
-        provider: {
-            suggest: function (request, options) {
-                return ymaps.suggest(request);
-            }
-        }
-    });
-    let cityTo = new ymaps.SuggestView('cityTo', {
-        provider: {
-            suggest: function (request, options) {
-                return ymaps.suggest(request);
-            }
-        }
-    });
-
-
+    let cityFrom = new ymaps.SuggestView('cityFrom', {provider: provider, results: 5});
+    let cityTo = new ymaps.SuggestView('cityTo', {provider: provider, results: 5});
 
     const swapCity = document.querySelector('.module__btn');
     swapCity.addEventListener('click', function (event) {
@@ -185,6 +171,11 @@ function autocomplete() {
     });
 
 }
+
+
+
+
+
 
 
 const dimensions = document.querySelectorAll('input[name="dimensions"]');
@@ -431,17 +422,77 @@ btnReverse.addEventListener('click', function (event) {
 });
 
 
-const btnCall = document.querySelector('.btn-request');
+const btnCall = document.querySelectorAll('.btn-request');
 const btnClose = document.querySelector('.btn-close');
 let modalCall = document.querySelector('.modal');
-btnCall.addEventListener('click', function (event) {
-    event.preventDefault();
-    modalCall.classList.add('open')
-});
 
-btnClose.addEventListener('click', function (event) {
+for (let i = 0; i < btnCall.length; ++i) {
+    btnCall[i].addEventListener('click', function (event) {
+        event.preventDefault();
+        modalCall.classList.add('open')
+    });
+}
+
+function closeModal () {
     event.preventDefault();
     document.querySelector('.form-call').reset();
     modalCall.classList.remove('open')
+}
+
+btnClose.addEventListener('click', closeModal);
+document.body.addEventListener('keyup', function(event) {
+    if(event.key === "Escape"){
+        closeModal ()
+    }
+});
+document.body.addEventListener('click', function(event) {
+    if (event.target === modalCall) {
+        closeModal()
+    }
+});
+const widgets = document.querySelector('.widgets-btn');
+window.addEventListener('scroll', function () {
+    let st = document.documentElement.scrollTop;
+    if (window.innerWidth >= 720) {
+        if (st > 300) {
+            widgets.classList.add('show')
+        } else {
+            widgets.classList.remove('show')
+        }
+    } else {
+        widgets.classList.remove('show');
+    }
 });
 
+let cityFrom = document.querySelector('#cityFrom');
+let cityTo = document.querySelector('#cityTo');
+
+function replaceCity () {
+    this.value = this.value.replace(/[^а-яА-Я., ]/,'');
+}
+cityFrom.addEventListener('input', replaceCity);
+
+
+
+//scrollTop
+const btnToTop = document.querySelector('.top');
+btnToTop.addEventListener('click', function (e) {
+    e.preventDefault();
+    let top = document.querySelector('body');
+    top.scrollIntoView({
+        behavior: 'smooth',
+        block:"start"
+    })
+});
+
+
+const formCalculate = document.querySelector('.calculate');
+formCalculate.addEventListener('click', function (event) {
+    //console.log(event.target.tagName === 'INPUT');
+    console.log(event.target.outerHTML);
+    let elImput = event.target.classList;
+    if (elImput.contains('module__input') || elImput.contains('js-calculate')) {
+        console.log(this.target)
+    }
+    //console.log(event.target.classList.contains('module__input') || event.target.classList.contains('js-calculate'))
+});

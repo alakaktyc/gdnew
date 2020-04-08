@@ -107,7 +107,7 @@
 
                 <div class="module__info showing">
                     <h3><span>Без предоплат</span></h3>
-                    <p>Для физических и юридических лиц</p>
+                    <p>Для юридических лиц</p>
                 </div>
                 <div class="module__info">
                     <h3><span>Четкие графики!</span></h3>
@@ -142,12 +142,12 @@
                     <div class="module__cities">
 
                         <label for="cityFrom">Город отправления</label>
-                        <input type="text" id="cityFrom" required>
+                        <input type="text" id="cityFrom" class="js-calculate" required>
 
                         <button class="module__btn"><img src="assets/img/rows.svg" alt=""/></button>
 
                         <label for="cityTo">Город доставки</label>
-                        <input type="text" id="cityTo" required>
+                        <input type="text" id="cityTo" class="js-calculate" required>
 
                     </div>
 
@@ -155,7 +155,7 @@
 
                         <label class="module__data module__data--weight">
                             Вес
-                            <input class="module__input module__input--weight" type="text" name="weight" placeholder="0.0" required><span>кг</span>
+                            <input class="module__input module__input--weight" type="text" name="weight" placeholder="0.0" maxlength="5" required><span>кг</span>
 
                         </label>
 
@@ -176,11 +176,11 @@
                                 </label>
 
                                 <label class="module__data module__data--switching">
-                                    <input class="module__input" type="text" placeholder="0.0" maxlength="3"
+                                    <input class="module__input" type="text" placeholder="0.0" maxlength="4"
                                            name="dimensions" required><span>x</span>
-                                    <input class="module__input" type="text" placeholder="0.0" maxlength="3"
+                                    <input class="module__input" type="text" placeholder="0.0" maxlength="4"
                                            name="dimensions" required><span>x</span>
-                                    <input class="module__input" type="text" placeholder="0.0" maxlength="3"
+                                    <input class="module__input" type="text" placeholder="0.0" maxlength="4"
                                            name="dimensions" required><span>м</span>
                                 </label>
 
@@ -260,7 +260,7 @@
                     </div>
                     <div class="services__item">
                         <a href="#" class="services__link services__link--shop"></a>
-                        <h4>До пунктов выдачи интернет-магазина</h4>
+                        <h4>интернет-магазинам</h4>
                     </div>
                     <div class="services__item">
                         <a href="#" class="services__link services__link--pack"></a>
@@ -755,7 +755,7 @@
                 <div id="news-slider">
 
                     <article class="news__article">
-                        <h3 class="news__title"><a href="#">-10% на доставку и забор груза в г. Минске</a></h3>
+                        <h3 class="news__title"><a href="#">-10% на самовывоз, самоподвоз на склад</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
                                 <img src="assets/img/news1.jpg">
@@ -785,7 +785,7 @@
                                 <div class="news__content">
                                     <span class="news__date">07.03.2020 г.</span>
                                     <span class="news__description">
-                                      <p>Для новых юридических лиц.
+                                      <p>-20% для новых юридических лиц.
                                             <br><br>На услугу “Перевозка по Беларуси”</p>
                                     </span>
                                     <a class="btn news__btn" href="#">
@@ -839,14 +839,7 @@
                             <span><img src="assets/img/icon_pdf.svg" alt=""><a href="#">Правила перевозок</a></span>
                         </div>
                     </div>
-                    <div class="document__item">
-                        <h3>Для физических лиц:</h3>
-                        <div class="document__item-links">
-                            <span><img src="assets/img/icon_pdf.svg" alt=""><a href="#">Список документов ЧЛ</a></span>
-                            <span><img src="assets/img/icon_pdf.svg" alt=""><a href="#">Заказ-поручение</a></span>
-                            <span><img src="assets/img/icon_doc.svg" alt=""><a href="#">Заявка ФЛ</a></span>
-                        </div>
-                    </div>
+
                     <div class="document__item">
                         <h3>Для юридических лиц:</h3>
                         <p>Перевозка осуществляется с предоставлением ТТН заказчиком (4 экземпляра)</p>
@@ -857,6 +850,14 @@
                             <span><img src="assets/img/icon_doc.svg" alt=""><a href="#">Реестр-заявка</a></span>
                             <span><img src="assets/img/icon_doc.svg" alt=""><a
                                     href="#">Экспедиторская расписка</a></span>
+                        </div>
+                    </div>
+                    <div class="document__item">
+                        <h3>Для физических лиц (ФЛ):</h3>
+                        <div class="document__item-links">
+                            <span><img src="assets/img/icon_pdf.svg" alt=""><a href="#">Список документов ФЛ</a></span>
+                            <span><img src="assets/img/icon_pdf.svg" alt=""><a href="#">Заказ-поручение ФЛ</a></span>
+                            <span><img src="assets/img/icon_doc.svg" alt=""><a href="#">Заявка ФЛ</a></span>
                         </div>
                     </div>
 
@@ -944,8 +945,8 @@
                 </div>
             </form>
             <div class="footer__copyright">
-                <p>2008—2019 © Транспортная компания</p>
-                <p>«ГлавДоставка» — C любовью!</p>
+                <p>2008-2020 ООО «ТМФ-Транс»</p>
+                <p>партнер компании ГлавДоставка на территории Беларуси</p>
             </div>
         </div>
         <div class="footer__contacts contacts">
@@ -1038,9 +1039,9 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="assets/js/xlsx.full.min.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=368e4890-6c0c-4a05-a5c1-2b03faf3f0df"></script>
-<script src="assets/js/main.js"></script>
 <script src="assets/js/slick.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/provider.js"></script>
 <script src="assets/js/s-main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

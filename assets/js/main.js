@@ -487,6 +487,7 @@ btnToTop.addEventListener('click', function (e) {
 
 
 const formCalculate = document.querySelector('.calculate');
+
 formCalculate.addEventListener('click', function (event) {
     //console.log(event.target.tagName === 'INPUT');
     console.log(event.target.outerHTML);
@@ -496,3 +497,10 @@ formCalculate.addEventListener('click', function (event) {
     }
     //console.log(event.target.classList.contains('module__input') || event.target.classList.contains('js-calculate'))
 });
+
+const inputsFormCalc = formCalculate.querySelectorAll('.js-calculate');
+for (let i = 0; i < inputsFormCalc.length; ++i) {
+    inputsFormCalc[i].addEventListener('focus', function () {
+        this.value = '';
+    })
+}

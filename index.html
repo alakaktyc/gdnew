@@ -24,10 +24,10 @@
             <div class="header__content">
                 <div class="header__logo header__logo--color"><a href="#"><img src="assets/img/logo_color.svg" alt="Главдоставка"></a></div>
                 <div class="header__logo header__logo--white"><a href="#"><img src="assets/img/logo.svg" alt="Главдоставка"></a></div>
-                <div class="header__cities">
+<!--                <div class="header__cities">
                     <p>Минск</p>
                     <a href="#">другой город</a>
-                </div>
+                </div>-->
             </div>
 
             <div class="header__about">
@@ -155,7 +155,7 @@
 
                         <label class="module__data module__data--weight">
                             Вес
-                            <input class="module__input module__input--weight js-calculate" type="text" name="weight" placeholder="0.0" maxlength="5" required><span>кг</span>
+                            <input class="module__input module__input--weight js-calculate" type="text" name="weight" placeholder="0.0" maxlength="5"><span>кг</span>
 
                         </label>
 
@@ -177,17 +177,17 @@
 
                                 <label class="module__data module__data--switching">
                                     <input class="module__input js-calculate" type="text" placeholder="0.0" maxlength="4"
-                                           name="dimensions" required><span>x</span>
+                                           name="dimensions"><span>x</span>
                                     <input class="module__input js-calculate" type="text" placeholder="0.0" maxlength="4"
-                                           name="dimensions" required><span>x</span>
+                                           name="dimensions"><span>x</span>
                                     <input class="module__input js-calculate" type="text" placeholder="0.0" maxlength="4"
-                                           name="dimensions" required><span>м</span>
+                                           name="dimensions"><span>м</span>
                                 </label>
 
 
                                 <label class="module__data module__data--switching">
                                     <input class="module__input js-calculate" name="volume" type="text"
-                                           placeholder="0.0" disabled><span>м<sup>3</sup></span>
+                                           placeholder="0.0"><span>м<sup>3</sup></span>
                                 </label>
 
 
@@ -758,7 +758,7 @@
                         <h3 class="news__title"><a href="#">-10% на самовывоз, самоподвоз на склад</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news1.jpg">
+                                <img src="assets/img/slide-1_glavdostavka.jpg">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
@@ -779,7 +779,7 @@
                         <h3 class="news__title"><a href="#">-20% для новых клиентов</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news2.png">
+                                <img src="assets/img/slide-3_glavdostavka.jpg">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
@@ -800,7 +800,7 @@
                         <h3 class="news__title"><a href="#">Больше – дешевле!</a></h3>
                         <div class="news__item">
                             <figure class="news__figure">
-                                <img src="assets/img/news3.png">
+                                <img src="assets/img/slide-5_glavdostavka.jpg">
                             </figure>
                             <div class="news__inner">
                                 <div class="news__content">
@@ -935,7 +935,7 @@
                 <div class="form__container">
                     <label>
                         Я хочу перевезти:
-                        <input type="text">
+                        <input type="text" name="message-client">
                     </label>
                     <div class="flex-box">
                         <a><span>Обувь в краснодар</span></a>
@@ -1016,15 +1016,26 @@
         <h3>офорить заявку</h3>
         <label>
             Ваше имя
-            <input type="text" name="client-name">
+            <input type="text" name="client-name" minlength="2" required>
         </label>
         <label>
             Номер телефона
-            <input type="text" name="phone">
+            <input type="tel" name="phone" value="+375" required>
+        </label>
+        <label>
+            Комментарий
+            <input type="text" name="comment">
         </label>
         <button class="btn">оформть заявку</button>
         <button class="btn-close">&#215;</button>
     </form>
+</div>
+
+<div class="popup">
+    <div class="popup-thanks">
+        <div class="popup__tittle">Спасибо,</div>
+        <p>Мы с вами свяжемся</p>
+    </div>
 </div>
 
 <ul class="widgets-btn">

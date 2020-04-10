@@ -1,0 +1,14 @@
+<svg width="33.51492" height="21.999939999999995" xmlns="http://www.w3.org/2000/svg">
+ <title>hamb</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line id="svg_1" fill=" none" stroke="#ffffff" stroke-miterlimit="10" y2="0.49994" x2="33.50746" y1="0.49994" x1="0.00746"/>
+  <line id="svg_2" fill=" none" stroke="#ffffff" stroke-miterlimit="10" y2="10.49994" x2="16.50746" y1="10.49994" x1="0.00746"/>
+  <line id="svg_3" fill=" none" stroke="#ffffff" stroke-miterlimit="10" y2="21.49994" x2="24.50746" y1="21.49994" x1="0.00746"/>
+ </g>
+</svg>

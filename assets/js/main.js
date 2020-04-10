@@ -119,8 +119,15 @@ minusPlace.addEventListener('click',function () {
 //mobile menu
 const mobMenuBtn = document.querySelector('.header__menu-mob');
 mobMenuBtn.addEventListener('click', function () {
-   const menu = document.querySelector('.header__menu');
-   menu.style.display = 'block'
+    const menu = document.querySelector('.header__menu');
+    let image  = document.querySelector('.header__menu-mob img');
+    if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        image.src = 'assets/img/btn_mob-menu.svg';
+    } else {
+        menu.classList.add('open');
+        image.src = 'assets/img/btn_mob-menu-white.svg';
+    }
 });
 
 
@@ -180,10 +187,21 @@ function autocomplete() {
 
 const dimensions = document.querySelectorAll('input[name="dimensions"]');
 for (let i = 0; i < dimensions.length; i++){
-    dimensions[i].addEventListener('keyup', function () {
+    dimensions[i].addEventListener('focus', function () {
+        console.log(dimensions[i].value === '');
+        if (dimensions[i].value === '') {
+            document.querySelector('input[name="volume"]').value = 0
+        }
+    });
+    dimensions[i].addEventListener('focus', function () {
         document.querySelector('input[name="volume"]').value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
-        //console.log(dimensions[0].value * dimensions[1].value * dimensions[2].value)
-    })
+    });
+    dimensions[i].addEventListener('blur', function () {
+        document.querySelector('input[name="volume"]').value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
+    });
+    dimensions[i].addEventListener('input', function () {
+        document.querySelector('input[name="volume"]').value = dimensions[0].value * dimensions[1].value * dimensions[2].value;
+    });
 }
 
 
@@ -422,34 +440,6 @@ btnReverse.addEventListener('click', function (event) {
 });
 
 
-const btnCall = document.querySelectorAll('.btn-request');
-const btnClose = document.querySelector('.btn-close');
-let modalCall = document.querySelector('.modal');
-
-for (let i = 0; i < btnCall.length; ++i) {
-    btnCall[i].addEventListener('click', function (event) {
-        event.preventDefault();
-        modalCall.classList.add('open')
-    });
-}
-
-function closeModal () {
-    event.preventDefault();
-    document.querySelector('.form-call').reset();
-    modalCall.classList.remove('open')
-}
-
-btnClose.addEventListener('click', closeModal);
-document.body.addEventListener('keyup', function(event) {
-    if(event.key === "Escape"){
-        closeModal ()
-    }
-});
-document.body.addEventListener('click', function(event) {
-    if (event.target === modalCall) {
-        closeModal()
-    }
-});
 const widgets = document.querySelector('.widgets-btn');
 window.addEventListener('scroll', function () {
     let st = document.documentElement.scrollTop;
@@ -504,3 +494,111 @@ for (let i = 0; i < inputsFormCalc.length; ++i) {
         this.value = '';
     })
 }
+
+//modal
+const btnCall = document.querySelectorAll('.btn-request');
+const btnClose = document.querySelector('.btn-close');
+const formCall = document.querySelector('.form-call');
+let messageClient = document.querySelector('input[name="message-client"');
+let inputsformCall = formCall.querySelectorAll('input');
+let modalCall = document.querySelector('.modal');
+
+for (let i = 0; i < btnCall.length; ++i) {
+    if (btnCall[i] === btnCall[btnCall.length - 1] ){
+        btnCall[i].addEventListener('click', function (event) {
+            event.preventDefault();
+            modalCall.classList.add('open');
+            sessionStorage.comment = messageClient.value;
+            inputsformCall[2].value = sessionStorage.comment
+        });
+    } else {
+        btnCall[i].addEventListener('click', function (event) {
+            event.preventDefault();
+            modalCall.classList.add('open')
+        });
+    }
+}
+
+
+
+for (let i = 0; i < inputsformCall.length; ++i) {
+    if (inputsformCall[i].getAttribute('name') === 'client-name') {
+        inputsformCall[i].addEventListener('input', replaceToRus)
+    }
+    if (inputsformCall[i].getAttribute('name') === 'phone') {
+        inputsformCall[i].addEventListener('input', mask)
+    }
+}
+
+//maskPhone
+let keyCode;
+function mask(event) {
+    event.code && (keyCode = event.code);
+    let matrix = "+375 (__) ___ __ __",
+        i = 0,
+        def = matrix.replace(/\D/g, ""),
+        val = this.value.replace(/\D/g, ""),
+        new_value = matrix.replace(/[_\d]/g, function(a) {
+            return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+        });
+    i = new_value.indexOf("_");
+    if (i !== -1) {
+        i < 5 && (i = 3);
+        new_value = new_value.slice(0, i)
+    }
+    let reg = matrix.substr(0, this.value.length).replace(/_+/g,
+        function(a) {
+            return "\\d{1," + a.length + "}"
+        }).replace(/[+()]/g, "\\$&");
+    reg = new RegExp("^" + reg + "$");
+    if (!reg.test(this.value) || this.value.length < 5 || keyCode >= 'Digit0' && keyCode >= 'Digit9') this.value = new_value;
+    if (event.type === "blur" && this.value.length < 5)  this.value = ""
+}
+
+
+function replaceToRus() {
+    this.value = this.value.replace(/[^а-яА-Я., ]/,'');
+}
+
+function closeModal () {
+    event.preventDefault();
+    formCall.reset();
+    modalCall.classList.remove('open');
+    messageClient.value = '';
+}
+
+btnClose.addEventListener('click', closeModal);
+document.body.addEventListener('keyup', function(event) {
+    if(event.key === "Escape"){
+        closeModal ()
+    }
+});
+document.body.addEventListener('click', function(event) {
+    if (event.target === modalCall) {
+        closeModal()
+    }
+});
+
+//thanks modal
+const momdalThank = document.querySelector('.popup');
+formCall.addEventListener('submit', function (event) {
+    event.preventDefault();
+    momdalThank.classList.add('open');
+    let title = document.querySelector('.popup__tittle');
+    console.log(inputsformCall[0].value);
+    sessionStorage.name = inputsformCall[0].value;
+    title.textContent = title.textContent + ' ' + sessionStorage.name;
+    closeModal();
+    setTimeout(function(){
+        momdalThank.classList.remove('open');
+    }, 2000);
+});
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault()
+    }
+});
+
+
+
